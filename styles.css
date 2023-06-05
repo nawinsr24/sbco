@@ -5,7 +5,7 @@ body {
 
 body {
     font-family: 'Lato', sans-serif;
-   
+
 }
 
 .navbar {
@@ -133,56 +133,66 @@ body {
     align-items: center;
     /* justify-content: center; */
 }
+
 .slist {
     list-style: none;
     width: 100%;
-  }
-  
-  .slist li::before {
+}
+
+.slist li::before {
     content: "\2022";
-    color:#536DFE ;
+    color: #536DFE;
     font-weight: bold;
-    display: inline-block; 
+    display: inline-block;
     width: 1em;
     margin-left: -1em;
-  }
-  .dcourt{
+}
+
+.dcourt {
     font-size: 13px;
     font-weight: 500;
     color: gray;
-    
-  }
+
+}
+
 .main_btn {
     background-color: #536DFE;
 }
-input:focus,textarea:focus{
-    border: solid 2px #536DFE!important;
+
+input:focus,
+textarea:focus {
+    border: solid 2px #536DFE !important;
     box-shadow: 0 0 5px 2px 536DFE;
 }
+
 @media (max-width: 991.98px) {
     .card {
         height: auto !important;
         min-height: auto;
     }
-    .sccont{
+
+    .sccont {
         border-right: 0;
     }
-    .sccont-2{
-        width: 100%!important;
+
+    .sccont-2 {
+        width: 100% !important;
         text-align: center;
-        height: auto ;
+        height: auto;
     }
-    .rr{
+
+    .rr {
         padding-right: 20px;
         padding-left: 20px;
     }
 }
+
 html {
     scroll-behavior: smooth;
     overflow-y: scroll;
     scroll-margin-top: 100px;
-  }
-  
+}
+
 @media (max-width: 767px) {
     .card {
         height: auto !important;
@@ -204,55 +214,65 @@ html {
     .secondrow {
         margin-top: 0px !important;
     }
-    .rr{
+
+    .rr {
         padding-right: 20px;
         padding-left: 20px;
         margin-right: 20px;
         margin-left: 20px;
     }
-    input,textarea{
-        width: 80vw!important;
+
+    input,
+    textarea {
+        width: 80vw !important;
     }
 }
+
 .contact-info {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-  }
-  .fa{
+}
+
+.fa {
     color: #536DFE;
-  }
-  .contact-card {
+}
+
+.contact-card {
     width: 30%;
     display: flex;
     align-items: center;
-  }
-  
-  .contact-card i {
+}
+
+.contact-card i {
     font-size: 1.5rem;
     margin-right: 0.5rem;
-  }
-  .add{
+}
+
+.add {
     color: #3c3c3c;
-  }
-  .add:focus{
-    color: #3c3c3c!important;
-  }
-  .add:hover{
-    color: #3c3c3c!important;
-  }
-  .linkedin{
+}
+
+.add:focus {
+    color: #3c3c3c !important;
+}
+
+.add:hover {
+    color: #3c3c3c !important;
+}
+
+.linkedin {
     height: 20px;
     border-radius: 5px;
     color: #536DFE;
     background-color: #536DFE;
-  }
+}
 
-  .mainContALL{
+.mainContALL {
     display: none;
-  }
-  
-  #bodysssss {
+}
+
+#bodysssss {
     display: flex;
     justify-content: center;
     align-items: center;
