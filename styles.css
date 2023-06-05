@@ -247,3 +247,69 @@ html {
     color: #536DFE;
     background-color: #536DFE;
   }
+
+  .mainContALL{
+    display: none;
+  }
+  
+  #bodysssss {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Set the body height to full viewport height */
+    background-color: white;
+}
+
+.containerssss {
+    display: flex;
+    /* Change to flex display */
+    justify-content: center;
+    /* Center align horizontally */
+    align-items: center;
+    /* Center align vertically */
+    height: 100%;
+    /* Set the container height to 100% */
+    width: 100%;
+    /* Set the container width to 100% */
+    position: relative;
+    box-sizing: border-box;
+}
+
+.imagessss {
+    width: 20vw;
+    height: auto;
+}
+
+#two,
+#three {
+    display: none;
+}
+
+@media (max-width: 850px) {
+    .imagessss {
+        width: 30vw;
+        height: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .imagessss {
+        width: 40vw;
+        height: auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .imagessss {
+        width: 60vw;
+        height: auto;
+    }
+}
+
+@media (max-width: 300px) {
+    .imagessss {
+        width: 60vw;
+        height: auto;
+    }
+}
