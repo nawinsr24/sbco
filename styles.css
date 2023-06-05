@@ -278,7 +278,8 @@ html {
     align-items: center;
     height: 100vh;
     /* Set the body height to full viewport height */
-    background-color: white;
+    background-color: #fffdff;
+    
 }
 
 .containerssss {
