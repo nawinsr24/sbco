@@ -54,10 +54,17 @@ body {
 
 .tag-line {
     font-weight: bold;
-    font-size: 25px;
+    font-size: 22px;
     color: rgb(70, 70, 70);
+    letter-spacing: 1.5px;
+    line-height: 35px;
 }
+.with{
+    font-size: 19px;
+    color: rgb(70, 70, 70);
+    margin-bottom: 5px;
 
+}
 .toggle-switch {
     display: inline-block;
     width: 50px;
@@ -284,6 +291,7 @@ html {
 
 .containerssss {
     display: flex;
+    flex-direction: column;
     /* Change to flex display */
     justify-content: center;
     /* Center align horizontally */
