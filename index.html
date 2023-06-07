@@ -12,8 +12,20 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+    <script type="text/javascript">
+        (function () {
+            try {
+                emailjs.init('679aT9B0rACmMzZiv');
+            } catch (error) {
+                console.log(error);
+            }
+            // https://dashboard.emailjs.com/admin/account
+            
+        })();
+    </script>
 </head>
 
 <body>
@@ -285,28 +297,29 @@
                 </div>
                 <div class="col-md-6 ">
                     <div class="single-contact">
-                        <form id="contact-form" method="post" action="contact.php" enctype="multipart/form-data">
+                        <form id="contact-form" >
                             <div class="row">
-                                <div class="form-group col-md-6">
-                                    <div class="contact_form">
-                                        <input type="text" name="name" class="form-control" placeholder="Name"
-                                            required="required">
-                                    </div>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <div class="contact_form">
-                                        <input type="text" name="subject" class="form-control" placeholder="Subject"
-                                            required="required">
-                                    </div>
-                                </div>
-
                                 <div class="form-group col-md-12">
                                     <div class="contact_form">
-                                        <input type="email" name="email" class="form-control" placeholder="Email"
+                                        <input type="text" name="from_name" class="form-control" placeholder="Name"
                                             required="required">
                                     </div>
                                 </div>
+                                <div class="form-group col-md-6">
+                                    <div class="contact_form">
+                                        <input type="text" name="mbile" class="form-control" placeholder="Mobile"
+                                            required="required">
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <div class="contact_form">
+                                        <input type="text" name="email" class="form-control" placeholder="Email"
+                                            required="required">
+                                    </div>
+                                </div>
+
+                              
 
                                 <div class="form-group col-md-12">
                                     <div class="contact_form">
@@ -318,7 +331,7 @@
                                 <div class="col-12 cent">
                                     <button type="submit" value="Send message" name="submit" id="submitButton"
                                         class="btn btn-primary main_btn ct_btn" title="Submit Your Message!">Send
-                                        Message</button>
+                                        Message  <span id="check"> <i  class="fa fa-check uc"></i></span></button>
                                 </div>
                             </div>
                         </form>
@@ -350,53 +363,31 @@
     </div> -->
     </div>
 
+    <script type="text/javascript">
+        window.onload = function () {
+            console.log(document.getElementById('contact-form'));setTimeout(() => {
+                document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                // these IDs from the previous steps
+                emailjs.sendForm('service_bonaawc', 'template_3n3ydxu', this)
+                    .then(function () {
+                        console.log('SUCCESS!');
+                        document.getElementById('contact-form').reset()
+                        document.getElementById('check').style.display='block'
+                        setTimeout(() => {
+                            document.getElementById('check').style.display='none'
 
-    <script>
-
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Access-Control-Request-Headers", "*");
-        myHeaders.append("api-key", "sarpZJXRddqPUiH8u3nLCnGNYXCTdHmrCrC1jWEYoRgatgggYLDCNkrZoR4h7G0V");
-
-        var raw = JSON.stringify({
-            "dataSource": "Cluster0",
-            "database": "sbco",
-            "collection": "data",
-            "document": {
-                "name": "John Sample",
-                "age": 42
-            }
-        });
-
-        var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow',
-            headers: {
-               "Content-Type": "application/json",
-                "Access-Control-Request-Headers": "*",
-                "api-key": "sarpZJXRddqPUiH8u3nLCnGNYXCTdHmrCrC1jWEYoRgatgggYLDCNkrZoR4h7G0V"
-            }
-        };
-
-        fetch("https://ap-south-1.aws.data.mongodb-api.com/app/data-omaak/endpoint/data/v1/action/insertOne", requestOptions)
-            .then(response => response.json()) // Parse the response as JSON
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
-
-
-
-        const toggleSwitch = document.querySelector('.toggle-switch');
-        setTimeout(() => {
-            toggleSwitch.classList.toggle('on');
-        }, 2000);
-        toggleSwitch.addEventListener('click', () => {
-            // toggleSwitch.classList.toggle('on');
-
-        });
-
+                        }, 2500);
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+            }, 3000);
+     
+        }
     </script>
+
 
     <script>
         document.getElementById('mainContALL').style.display = "none"
