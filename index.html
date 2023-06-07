@@ -29,8 +29,8 @@
     </div>
 
     <div id="mainContALL">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <a class="navbar-brand" href="#">SWITCH BOX CO</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fade-in">
+            <a class="navbar-brand" href="index.html"><img class="lim" src="./assets/logo.png" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -38,49 +38,49 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home </a>
+                        <a class="nav-link" href="#home">Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#wwr">About</a>
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#wwd">Services</a>
+                        <a class="nav-link" href="#services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#rotu">Contact</a>
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
         </nav>
 
 
-        <div class="container hc">
+        <div id="home" class="container hc">
             <div class="row align-items-center">
-                <div class="col-md-6 text-center">
-                    <h3 class="tag-line">SUPERCHARGE YOUR BUSINESS IDEA</h3>
+                <div class="col-md-6 text-center fade-in">
+                    <h3 class="tag-line">SUPERCHARGE YOUR BUSINESS IDEAS</h3>
                     <!-- <span class="with"></span> -->
                     <h3 class="tag-line">WITH DEEP-TECH ENABLED SOLUTIONS</h3>
                     <!-- <span>All at a single toggle</span> -->
                     <!-- <span class="toggle-switch"></span> -->
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 fade-in-element-right">
                     <img src="./assets/undraw_team_collaboration_re_ow29.svg" class="img-fluid mx-auto d-block home-img"
                         alt="Image">
                 </div>
             </div>
         </div>
-        <div id="wwr" class="section-h text-center">
+        <div id="about" class="section-h text-center">
             <span><span class="dline">-----------</span> &nbsp; Who We Are &nbsp; <span class="dline">-----------</span>
             </span>
         </div>
         <div class="container mt-4">
             <div class="row align-items-center">
 
-                <div class="col-md-6">
+                <div class="col-md-6 fade-in-element-right">
                     <img src="./assets/whoweare.svg" class="img-fluid mx-auto d-block about-img" alt="Image">
                 </div>
 
-                <div class="col-md-6 text-center">
+                <div class="col-md-6 text-center fade-in-element-right">
                     <span>Now is the perfect time to launch your innovative ideas in the booming Indian entrepreneurship
                         scene. However, implementing them can be tough. SWITCHBOX CO is here to help. Our team of
                         experts will guide you through tech-stack, market fit, branding, legalities, and more, so you
@@ -90,7 +90,7 @@
             </div>
         </div>
 
-        <div id="wwd" class="section-h text-center">
+        <div id="services" class="section-h text-center">
             <span><span class="dline">-----------</span> &nbsp; How We Fuels Your Business Ideation &nbsp; <span
                     class="dline">-----------</span>
             </span>
@@ -239,7 +239,7 @@
 
         </div>
 
-        <div id="rotu" class="section-h text-center">
+        <div id="contact" class="section-h text-center">
             <span><span class="dline">-----------</span> &nbsp; Reach Out To Us &nbsp; <span
                     class="dline">-----------</span>
             </span>
@@ -251,8 +251,8 @@
                         <div class="col-1">
                             <i class="fa fa-mobile-alt"></i>
                         </div>
-                        <div class="col-11"> <a class="add" href="tel:+(91)9942440332">+91 9942440332</a>,<br><a class="add"
-                                href="tel:+(91)9444258767">+91 9444258767</a></div>
+                        <div class="col-11"> <a class="add" href="tel:+(91)9942440332">+91 9942440332</a>,<br><a
+                                class="add" href="tel:+(91)9444258767">+91 9444258767</a></div>
                     </div>
                     <br>
                     <div class="row">
@@ -349,6 +349,26 @@
 
 
     <script>
+        function isElementInView(element) {
+            var rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function handleScroll() {
+            var fadeInElement = document.querySelector('.fade-in-element-left');
+            if (isElementInView(fadeInElement)) {
+                fadeInElement.classList.add('visible');
+                window.removeEventListener('scroll', handleScroll);
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
         const toggleSwitch = document.querySelector('.toggle-switch');
         setTimeout(() => {
             toggleSwitch.classList.toggle('on');

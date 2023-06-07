@@ -171,7 +171,24 @@ textarea:focus {
     border: solid 2px #536DFE !important;
     box-shadow: 0 0 5px 2px 536DFE;
 }
+.lim{
+    height: 50px;
+    width: auto;
+}
 
+.fade-in {
+    animation: fade 1s ease-in;
+  }
+  
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
 @media (max-width: 991.98px) {
     .card {
         height: auto !important;
@@ -327,6 +344,12 @@ html {
         width: 40vw;
         height: auto;
     }
+    .slist{
+        text-align: left;
+    }
+    .tag-line{
+        font-size: 19px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -342,3 +365,41 @@ html {
         height: auto;
     }
 }
+
+.fade-in-element-left {
+    opacity: 0;
+    position: relative;
+    left: -100px; /* Start off-screen to the left */
+    animation: fade-in 1s forwards;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      left: -100px; /* Start off-screen to the left */
+    }
+    100% {
+      opacity: 1;
+      left: 0; /* Move to the original position */
+    }
+  }
+  
+
+  .fade-in-element-right {
+    opacity: 0;
+    position: relative;
+    right: -100px; /* Start off-screen to the right */
+    animation: fade-in 1s forwards;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      right: -100px; /* Start off-screen to the right */
+    }
+    100% {
+      opacity: 1;
+      right: 0; /* Move to the original position */
+    }
+  }
+  
