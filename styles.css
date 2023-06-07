@@ -91,7 +91,7 @@ body {
 }
 
 .toggle-switch.on {
-    background-color: #536DFE;
+    background-color: #0f75bc;
 }
 
 .toggle-switch.on::before {
@@ -108,7 +108,7 @@ body {
 }
 
 .dline {
-    color: #536DFE;
+    color: #0f75bc;
 }
 
 .ccont {
@@ -148,7 +148,7 @@ body {
 
 .slist li::before {
     content: "\2022";
-    color: #536DFE;
+    color: #0f75bc;
     font-weight: bold;
     display: inline-block;
     width: 1em;
@@ -163,13 +163,13 @@ body {
 }
 
 .main_btn {
-    background-color: #536DFE;
+    background-color: #0f75bc;
 }
 
 input:focus,
 textarea:focus {
-    border: solid 2px #536DFE !important;
-    box-shadow: 0 0 5px 2px 536DFE;
+    border: solid 2px #0f75bc !important;
+    box-shadow: 0 0 5px 2px 0f75bc;
 }
 .lim{
     height: 50px;
@@ -259,7 +259,7 @@ html {
 }
 
 .fa {
-    color: #536DFE;
+    color: #0f75bc;
 }
 
 .contact-card {
@@ -288,8 +288,8 @@ html {
 .linkedin {
     height: 20px;
     border-radius: 5px;
-    color: #536DFE;
-    background-color: #536DFE;
+    color: #0f75bc;
+    background-color: #0f75bc;
 }
 
 .mainContALL {
