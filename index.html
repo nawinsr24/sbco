@@ -186,10 +186,13 @@
 
 
 
-                                    <li>Legal Compliance</li>
-                                    <li>Intellectual Property Compliance</li>
-                                    <li>Financial Compliance</li>
+                                    <li>End-to-End Legal Consultation</li>
+                                    <li>GST/TAN/FSSI Registration</li>
                                     <li>Litigation Support</li>
+                                    <li>Trademark Analysis and Registration</li>
+
+
+
 
 
 
@@ -349,25 +352,40 @@
 
 
     <script>
-        function isElementInView(element) {
-            var rect = element.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
 
-        function handleScroll() {
-            var fadeInElement = document.querySelector('.fade-in-element-left');
-            if (isElementInView(fadeInElement)) {
-                fadeInElement.classList.add('visible');
-                window.removeEventListener('scroll', handleScroll);
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Access-Control-Request-Headers", "*");
+        myHeaders.append("api-key", "sarpZJXRddqPUiH8u3nLCnGNYXCTdHmrCrC1jWEYoRgatgggYLDCNkrZoR4h7G0V");
+
+        var raw = JSON.stringify({
+            "dataSource": "Cluster0",
+            "database": "sbco",
+            "collection": "data",
+            "document": {
+                "name": "John Sample",
+                "age": 42
             }
-        }
+        });
 
-        window.addEventListener('scroll', handleScroll);
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow',
+            headers: {
+               "Content-Type": "application/json",
+                "Access-Control-Request-Headers": "*",
+                "api-key": "sarpZJXRddqPUiH8u3nLCnGNYXCTdHmrCrC1jWEYoRgatgggYLDCNkrZoR4h7G0V"
+            }
+        };
+
+        fetch("https://ap-south-1.aws.data.mongodb-api.com/app/data-omaak/endpoint/data/v1/action/insertOne", requestOptions)
+            .then(response => response.json()) // Parse the response as JSON
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+
+
 
         const toggleSwitch = document.querySelector('.toggle-switch');
         setTimeout(() => {
